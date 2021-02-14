@@ -3,39 +3,18 @@ class DrinksController < ApplicationController
 
   # GET /drinks
   def index
-    @drinks = Drink.all
+    @drinks = Drink.select("id, title").all
 
     render json: @drinks
   end
 
-  # GET /drinks/1
+  # GET /drinks/:id
   def show
-    render json: @drink
-  end
-
-  # POST /drinks
-  def create
-    @drink = Drink.new(drink_params)
-
-    if @drink.save
-      render json: @drink, status: :created, location: @drink
-    else
-      render json: @drink.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /drinks/1
-  def update
-    if @drink.update(drink_params)
-      render json: @drink
-    else
-      render json: @drink.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /drinks/1
-  def destroy
-    @drink.destroy
+    render json: @drink.to_json(:include => {
+      :ingredients => {
+        :only => [:id, :description]
+      }
+    })
   end
 
   private
