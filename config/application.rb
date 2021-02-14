@@ -36,6 +36,11 @@ module Recipes
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Explicitly tell Rails to use the normal scaffold_controller because
+    # one downside to ActiveAdmin using inherited_resources,
+    # which reduces the boilerplate for Rails controllers, is that
+    # Rails then uses it when you scaffold anything in your app.
     config.app_generators.scaffold_controller = :scaffold_controller
 
     # Middleware for ActiveAdmin
