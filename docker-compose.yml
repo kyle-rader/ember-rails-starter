@@ -8,13 +8,24 @@ services:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: password
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: api.Dockerfile
     container_name: recipes_api
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
     volumes:
       - .:/app
     ports:
-      - "3000:3000"
       - "3001:3001"
     depends_on:
       - db
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    container_name: recipes_client
+    command: yarn start
+    volumes:
+      - ./client:/client
+    ports:
+      - "3000:3000"
