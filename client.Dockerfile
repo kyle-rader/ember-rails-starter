@@ -1,6 +1,6 @@
 FROM node:14-buster AS node-build
 
-RUN apt-get update -q && apt-get install -y lsyncd nano supervisor
+RUN apt-get update -q && apt-get install -y lsyncd nano supervisor apt-utils
 RUN mkdir -p /var/log/supervisor
 
 # Chrome install steps taken from https://hub.docker.com/r/browserless/chrome/dockerfile
@@ -43,7 +43,6 @@ USER user
 WORKDIR /app
 
 COPY --chown=user:user supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
 COPY --chown=user:user lsyncd.conf.lua /etc/lsyncd/lsyncd.conf.lua
 
 # Copy over package manifests first, so that other source code changes don't cause packages to be
