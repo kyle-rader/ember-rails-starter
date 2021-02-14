@@ -1,0 +1,4 @@
+root = true
+
+[*.{js,rb,ru,yml,yaml,Dockerfile}]
+end_of_line = lf
