@@ -33,9 +33,12 @@ RUN npm install -g ember-cli
 
 WORKDIR /client
 
-COPY ./client .
-
+COPY ./client/package.json .
+COPY ./client/yarn.lock .
 RUN yarn install
+
+# Now copy the rest
+COPY ./client .
 
 RUN ember build
 
