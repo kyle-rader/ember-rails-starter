@@ -10,6 +10,10 @@
     "doc": "doc",
     "test": "tests"
   },
+  "engines": {
+    "node": "14.15.5",
+    "yarn": "1.22.5"
+  },
   "scripts": {
     "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
@@ -65,9 +69,6 @@
     "qunit": "^2.13.0",
     "qunit-dom": "^1.6.0",
     "tailwindcss": "^2.0.3"
-  },
-  "engines": {
-    "node": "10.* || >= 12"
   },
   "ember": {
     "edition": "octane"
