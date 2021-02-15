@@ -10,6 +10,6 @@
         "build": "yarn --cwd client build",
         "deploy": "cp -a client/dist/. public/",
         "heroku-prebuild": "yarn prebuild",
-        "heroku-postbuild": "yarn deploy"
+        "heroku-postbuild": "yarn build && yarn deploy"
     }
 }
