@@ -7,9 +7,9 @@
     },
     "scripts": {
         "prebuild": "yarn --cwd client install",
-        "build": "yarn --cwd client build",
+        "build": "yarn prebuild && yarn --cwd client build",
         "deploy": "cp -a client/dist/. public/",
-        "heroku-prebuild": "yarn prebuild && yarn global add ember-cli",
+        "heroku-prebuild": "yarn global add ember-cli",
         "heroku-postbuild": "yarn build && yarn deploy"
     }
 }
