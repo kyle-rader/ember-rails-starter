@@ -1,0 +1,13 @@
+{
+    "name": "ember-rails-starter",
+    "license": "MIT",
+    "engines": {
+        "node": "14.15.5",
+        "yarn": "1.22.5"
+    },
+    "scripts": {
+        "build": "yarn --cwd client install && yarn --cwd client build",
+        "deploy": "cp -a client/dist/. public/",
+        "heroku-postbuild": "yarn build && yarn deploy"
+    }
+}
