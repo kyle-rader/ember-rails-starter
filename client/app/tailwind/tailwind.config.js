@@ -5,11 +5,10 @@ module.exports = {
     container: {
       center: true
     },
-    extend: {
-      fontFamily: {
-        sans: ['Graphik', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
-      },
+    fontFamily: {
+      sans: ['Quicksand', 'Arial'],
+      serif: ['Newsreader', 'Cambria'],
+      mono: ['Inconsolata', 'Consolas']
     },
   },
   variants: {
