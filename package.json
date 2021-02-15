@@ -6,7 +6,7 @@
         "yarn": "1.22.5"
     },
     "scripts": {
-        "build": "cd ./client && yarn install && yarn build && cd ..",
+        "build": "yarn --cwd client install && yarn --cwd client build",
         "deploy": "cp -a client/dist/. public/",
         "heroku-prebuild": "yarn global add ember-cli",
         "heroku-postbuild": "yarn build && yarn deploy"
