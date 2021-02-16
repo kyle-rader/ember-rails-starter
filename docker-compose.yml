@@ -7,6 +7,7 @@ services:
     environment:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: password
+
   api:
     build:
       context: .
@@ -21,6 +22,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+
   client:
     build:
       context: .
@@ -28,6 +30,7 @@ services:
     command: yarn start
     volumes:
       - ./client:/client
+      - /client/node_modules
     ports:
       - "4200:4200"
       - "7357:7357"
