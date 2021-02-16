@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
-    "heroku-postbuild": "ember build -prod && cp -a dist/ ../public/",
+    "heroku-postbuild": "ember build -prod && cp -R dist/* ../public/",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
