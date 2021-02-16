@@ -37,6 +37,9 @@ module Recipes
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # We do in fact want to serve our index.html from public/
+    config.serve_static_assets = true
+
     # Explicitly tell Rails to use the normal scaffold_controller because
     # one downside to ActiveAdmin using inherited_resources,
     # which reduces the boilerplate for Rails controllers, is that
