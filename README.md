@@ -1,6 +1,6 @@
 # Ember-Rails-Starter
 
-This project is a template for building a Rails API backend, that also serves an `index.html` that loads a sing-page Ember JS application.
+This project is a template for building a Rails API backend, that also serves an `index.html` that loads a single-page Ember JS application.
 
 Locally, this can developed using Docker and Docker-Compose. The `client/` folder holds the Ember app while the root dir looks like a regular Rails 6 application.
 
